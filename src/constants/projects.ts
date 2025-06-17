@@ -36,7 +36,7 @@ export const projects: Projects[] = [
   {
     title: "Voucher Management System",
     description:
-      "A voucher management system for managing and distributing vouchers, allowing users to create, view, update, and delete vouchers. It includes features for tracking voucher usage and generating reports.",
+      "A voucher management system for managing vouchers, allowing users to create, view, and update, It includes features for tracking voucher usage and generating reports.",
     link: "",
     tech: ["PHP", "CodeIgniter", "MySQL", "Bootstrap"],
     id: "voucher-management-system",
