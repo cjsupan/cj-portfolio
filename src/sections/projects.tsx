@@ -15,11 +15,51 @@ const Projects = () => {
   });
   const [showLeftArrow, setShowLeftArrow] = useState<boolean>(false);
   const [showRightArrow, setShowRightArrow] = useState<boolean>(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
 
   const x = useMotionValue(0);
+
+  const centerCard = useCallback(
+    (index: number) => {
+      if (!containerRef.current || !contentRef.current) return;
+      const containerWidth = containerRef.current.offsetWidth;
+      const card = cardRefs.current[index];
+      if (!card) return;
+
+      const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+      const containerCenter = containerWidth / 2;
+      let newX = -(cardCenter - containerCenter);
+
+      newX = Math.max(constraints.left, Math.min(constraints.right, newX));
+      x.set(newX);
+      setActiveIndex(index);
+    },
+    [constraints, x]
+  );
+
+  const handleDragEnd = useCallback(() => {
+    if (!containerRef.current || !contentRef.current) return;
+    const containerWidth = containerRef.current.offsetWidth;
+    const currentX = x.get();
+
+    let minDist = Infinity;
+    let closestIdx = 0;
+    cardRefs.current.forEach((card, idx) => {
+      if (!card) return;
+      const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+      const containerCenter = containerWidth / 2 - currentX;
+      const dist = Math.abs(cardCenter - containerCenter);
+      if (dist < minDist) {
+        minDist = dist;
+        closestIdx = idx;
+      }
+    });
+    centerCard(closestIdx);
+  }, [centerCard, x]);
 
   const updateConstraints = useCallback(() => {
     if (containerRef.current && contentRef.current) {
@@ -35,7 +75,7 @@ const Projects = () => {
       setConstraints(newConstraints);
       setShowRightArrow(maxDrag > 0);
     }
-  }, [projects]);
+  }, []);
 
   const updateArrowVisibility = useCallback(
     (currentX: number) => {
@@ -61,26 +101,28 @@ const Projects = () => {
     return () => window.removeEventListener("resize", updateConstraints);
   }, [updateConstraints]);
 
+  useEffect(() => {
+    centerCard(activeIndex);
+  }, [constraints.left, constraints.right]);
+
   const scrollToStart = () => {
-    x.set(0);
+    centerCard(0);
   };
 
   const scrollToEnd = () => {
-    x.set(constraints.left);
+    centerCard(projects.length - 1);
   };
 
   const scrollLeft = () => {
-    const containerWidth = containerRef.current?.offsetWidth || 0;
-    const currentX = x.get();
-    const newX = Math.min(0, currentX + containerWidth * 0.8);
-    x.set(newX);
+    if (activeIndex > 0) {
+      centerCard(activeIndex - 1);
+    }
   };
 
   const scrollRight = () => {
-    const containerWidth = containerRef.current?.offsetWidth || 0;
-    const currentX = x.get();
-    const newX = Math.max(constraints.left, currentX - containerWidth * 0.8);
-    x.set(newX);
+    if (activeIndex < projects.length - 1) {
+      centerCard(activeIndex + 1);
+    }
   };
 
   return (
@@ -160,14 +202,15 @@ const Projects = () => {
             dragMomentum={false}
             whileDrag={{ cursor: "grabbing" }}
             style={{ x }}
-            onDrag={(_, info) => {
-              updateArrowVisibility(info.point.x);
-            }}
+            onDragEnd={handleDragEnd}
           >
             {projects.map((project, index) => (
               <div
                 key={project.id || index}
                 className="snap-start shrink-0 pointer-events-auto"
+                ref={(el) => {
+                  cardRefs.current[index] = el;
+                }}
               >
                 <ProjectCard project={project} index={index} />
               </div>

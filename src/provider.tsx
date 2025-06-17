@@ -64,7 +64,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
         setThemeState(defaultTheme);
       }
     } catch {
-      // no-op
+      setThemeState(defaultTheme);
     }
   }, []);
 
@@ -77,7 +77,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
         localStorage.setItem("theme", newTheme);
       }
     } catch {
-      // fail silently
+      localStorage.removeItem("theme");
     }
   };
 

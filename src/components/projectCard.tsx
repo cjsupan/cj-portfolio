@@ -17,7 +17,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                shadow-md drop-shadow-lg border-2 border-primary-light dark:border-secondary-dark
                rounded-[17px] text-center cursor-pointer transition-all duration-300 
                flex items-center justify-center select-none font-bold text-black 
-               hover:border-primary-default dark:hover:border-primary-dark hover:scale-105 active:scale-105 flex-shrink-0 snap-start p-4"
+               hover:border-primary-default dark:hover:border-primary-dark hover:scale-105 active:scale-105 flex-shrink-0 snap-center p-4"
     >
       <div className="w-full h-full flex flex-col text-left">
         <div className="flex flex-col gap-4 flex-grow">
