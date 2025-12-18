@@ -4,7 +4,7 @@ export const workExperience: About[] = [
   {
     title: "Software Engineer",
     company: "Kredit Hero Inc.",
-    date: "July 2025 - November 2025",
+    date: "July 2025 - Nov 2025",
     type: "Full Time",
     description: " ",
   },
