@@ -2,9 +2,16 @@ import type { About } from "../types/about";
 
 export const workExperience: About[] = [
   {
+    title: "Software Engineer",
+    company: "Kredit Hero Inc.",
+    date: "July 2025 - November 2025",
+    type: "Full Time",
+    description: " ",
+  },
+  {
     title: "Front-End Developer",
     company: "Serino Systems Inc.",
-    date: "April 2024 - Present",
+    date: "April 2024 - July 2025",
     type: "Full Time",
     description: " ",
   },

@@ -61,4 +61,12 @@ export const technologies: Technology[] = [
     name: "Postman",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-plain.svg",
   },
+  {
+    name: "Zustand",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/zustand/zustand-plain.svg",
+  },
+  {
+    name: "FastAPI",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg",
+  },
 ];
