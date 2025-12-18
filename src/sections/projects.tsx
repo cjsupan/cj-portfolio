@@ -49,13 +49,15 @@ const Projects = () => {
           spaceBetween={100}
           effect="slide"
           breakpoints={{
+            375: { slidesPerView: 1.2 },
+            425: { slidesPerView: 1.5 },
             640: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
-            1024: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
             1280: { slidesPerView: 4 },
             1536: { slidesPerView: 6 },
           }}
-          centeredSlides={false}
+          centeredSlides={true}
           modules={[Pagination]}
           pagination={{ clickable: true }}
           className="w-full"
