@@ -26,7 +26,18 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   children,
   defaultTheme = "system",
 }) => {
-  const [theme, setThemeState] = useState<Theme>(defaultTheme);
+  // Initialize theme from localStorage immediately
+  const [theme, setThemeState] = useState<Theme>(() => {
+    if (typeof window === "undefined") return defaultTheme;
+
+    try {
+      const savedTheme = localStorage.getItem("theme") as Theme;
+      return savedTheme || defaultTheme;
+    } catch {
+      return defaultTheme;
+    }
+  });
+
   const [systemPrefersDark, setSystemPrefersDark] = useState<boolean>(() => {
     if (typeof window === "undefined") return false;
     return window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -36,6 +47,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     return theme === "dark" || (theme === "system" && systemPrefersDark);
   }, [theme, systemPrefersDark]);
 
+  // Apply theme to DOM
   useEffect(() => {
     const root = document.documentElement;
 
@@ -45,6 +57,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     root.setAttribute("data-theme", appliedTheme);
   }, [theme, systemPrefersDark]);
 
+  // Listen for system theme changes
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handleChange = (event: MediaQueryListEvent) => {
@@ -53,19 +66,6 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
 
     mediaQuery.addEventListener("change", handleChange);
     return () => mediaQuery.removeEventListener("change", handleChange);
-  }, []);
-
-  useEffect(() => {
-    try {
-      const savedTheme = localStorage.getItem("theme") as Theme;
-      if (savedTheme) {
-        setThemeState(savedTheme);
-      } else {
-        setThemeState(defaultTheme);
-      }
-    } catch {
-      setThemeState(defaultTheme);
-    }
   }, []);
 
   const setTheme = (newTheme: Theme) => {
@@ -77,7 +77,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
         localStorage.setItem("theme", newTheme);
       }
     } catch {
-      localStorage.removeItem("theme");
+      // Handle localStorage errors silently
     }
   };
 
