@@ -1,71 +1,109 @@
+"use client";
+
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+
 const Contact = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+    setSuccess(false);
+
+    if (!formRef.current) return;
+
+    // Auto-fill time
+    const timeInput =
+      formRef.current.querySelector<HTMLInputElement>("input[name='time']");
+    if (timeInput) {
+      timeInput.value = new Date().toLocaleString();
+    }
+
+    emailjs
+      .sendForm(
+        "service_ole3gon", // replace with your EmailJS Service ID
+        "template_m3fmpig", // replace with your EmailJS Template ID
+        formRef.current,
+        "vMfAGgnilrQ0IU8R6" // replace with your EmailJS Public Key
+      )
+      .then(() => {
+        setSuccess(true);
+        formRef.current?.reset();
+      })
+      .catch((err) => {
+        console.error("EmailJS error:", err);
+        setError("Failed to send message. Please try again.");
+      })
+      .finally(() => setLoading(false));
+  };
+
   return (
     <div
       id="contact"
-      className="w-full flex flex-col justify-evenly xxs:gap-2 lg:gap-4 mb-20"
+      className="w-full flex flex-col justify-evenly mb-20 gap-4"
     >
-      <div className="@container w-full flex max-md:gap-8 max-md:pt-4 flex-col min-md:justify-between items-center px-8 min-h-36">
-        <h2
-          className={`text-center font-bold @max-md:text-5xl @min-md:text-6xl bg-linear-65 from-[#13B0F5] to-[#E70FAA] dark:bg-linear-65 dark:from-[#E70FAA] dark:to-[#13B0F5] transition duration-1000 ease-in-out inline-block text-transparent bg-clip-text`}
-        >
-          Get in Touch
-        </h2>
-        <div className="flex @min-md:flex-row @max-md:flex-col gap-4 justify-end">
-          <a
-            className={`dark:text-white text-primary-light font-semibold text-lg `}
-            href="mailto:supancj18@gmail.com"
-            target="_top"
-          >
-            supancj18@gmail.com
-          </a>
-          <div className="flex max-md:flex-row justify-center justify-self-end  gap-6">
-            <a
-              href="https://github.com/cjsupan"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="dark:text-white text-primary-light hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
-              >
-                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-                <path d="M9 18c-4.51 2-5-2-7-2" />
-              </svg>
-            </a>
+      <h2 className="text-center font-bold text-6xl bg-linear-65 from-[#13B0F5] to-[#E70FAA] dark:bg-linear-65 dark:from-[#E70FAA] dark:to-[#13B0F5] text-transparent bg-clip-text">
+        Get in Touch
+      </h2>
 
-            <a
-              href="https://www.linkedin.com/in/cedrick-john-supan/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="dark:text-white text-primary-light hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
-              >
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                <rect width="4" height="12" x="2" y="9" />
-                <circle cx="4" cy="4" r="2" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
+      <form
+        ref={formRef}
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-4 w-full max-w-xl mx-auto mt-8"
+      >
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+          className="p-3 rounded-md ring-2 ring-primary-light focus:outline-none focus:ring-2 focus:ring-primary-light bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-white text-secondary-light"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+          className="p-3 rounded-md ring-2 ring-primary-light focus:outline-none focus:ring-2 focus:ring-primary-light bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-white text-secondary-light"
+        />
+        <input
+          type="text"
+          name="subject"
+          placeholder="Subject"
+          required
+          className="p-3 rounded-md ring-2 ring-primary-light focus:outline-none focus:ring-2 focus:ring-primary-light bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-white text-secondary-light"
+        />
+        {/* Hidden input for time */}
+        <input type="hidden" name="time" />
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          required
+          rows={5}
+          className="p-3 rounded-md ring-2 ring-primary-light focus:outline-none focus:ring-2 focus:ring-primary-light bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-white text-secondary-light"
+        />
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="bg-primary-light text-white py-3 rounded-md font-semibold hover:bg-primary-default "
+        >
+          {loading ? "Sending..." : "Send Message"}
+        </button>
+
+        {success && (
+          <p className="text-green-500 mt-2 dark:text-green-400">
+            Message sent successfully!
+          </p>
+        )}
+        {error && (
+          <p className="text-red-500 mt-2 dark:text-red-400">{error}</p>
+        )}
+      </form>
     </div>
   );
 };
