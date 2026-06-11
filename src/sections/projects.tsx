@@ -13,10 +13,10 @@ const Projects = () => {
       id="projects"
       className="w-full min-h-dvh flex flex-col justify-center py-12 md:py-20 bg-background-dark text-primary-dark dark:bg-accent-dark/10 dark:text-primary-dark relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto w-full px-8 md:px-16 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
+      <div className="max-w-7xl mx-auto w-full px-8 sm:px-16 mb-12 flex flex-col md:flex-row md:items-end sm:justify-between items-center gap-8">
         {/* The Heavy Header */}
         <div className="flex flex-col gap-4">
-          <h2 className="text-6xl md:text-8xl font-heading font-bold leading-none tracking-tight">
+          <h2 className="text-6xl sm:text-8xl font-heading font-bold leading-none tracking-tight">
             Shipped.
           </h2>
           <p className="font-body text-xl md:text-2xl ">
@@ -25,7 +25,7 @@ const Projects = () => {
         </div>
 
         {/* Minimalist Custom Navigation */}
-        <div className="flex gap-4 z-20">
+        <div className="max-md:w-full flex flex-row md:gap-4 gap-8 justify-between z-20">
           <button
             className="p-4 border border-primary-dark hover:bg-primary-dark hover:text-primary-light dark:border-primary-dark dark:hover:border-primary-default dark:hover:bg-primary-default dark:hover:text-primary-dark transition-colors duration-200"
             onClick={() => swiperRef.current?.slidePrev()}
