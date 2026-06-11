@@ -1,21 +1,35 @@
+@import "./fonts.css";
+
 @import "tailwindcss";
 @import "swiper/css";
 @import "swiper/css/navigation";
 @import "swiper/css/pagination";
 
 @theme {
-  --color-primary-light: #42446e;
-  --color-primary-dark: #d9d9d9;
-  --color-primary-default: #42446e;
+  --font-heading: "ClashDisplay", sans-serif;
+  --font-body: "Archivo", "Inter";
 
-  --color-secondary-light: #666666;
-  --color-secondary-dark: #a7a7a7;
-  --color-secondary-default: #a7a7a7;
+  /* Primary */
+  --color-primary-light: #0e2f76;
+  --color-primary-dark: #f4feff;
+  --color-primary-default: #0e2f76;
 
-  --color-background-light: #ffffff;
-  --color-background-dark: #191919;
-  --color-background-default: #ffffff;
+  /* Secondary */
+  --color-secondary-light: #5b6785;
+  --color-secondary-dark: #a9c0e0;
+  --color-secondary-default: #a9c0e0;
 
+  /* Background */
+  --color-background-light: #f4feff;
+  --color-background-dark: #071326;
+  --color-background-default: #f4feff;
+
+  /* Accent */
+  --color-accent-light: #a9c0e0;
+  --color-accent-dark: #5a7fb3;
+  --color-accent-default: #a9c0e0;
+
+  /* Breakpoints */
   --breakpoint-xs: 30rem;
   --breakpoint-sm: 48rem;
   --breakpoint-md: 64rem;
