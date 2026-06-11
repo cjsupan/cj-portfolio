@@ -23,10 +23,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
     >
       {/* Top: Massive Title & Description */}
       <div className="flex flex-col gap-6">
-        <h3 className="text-4xl font-heading font-bold leading-none tracking-tight">
+        <h3 className="text-2xl sm:text-4xl font-heading font-bold leading-none tracking-tight">
           {project.title}
         </h3>
-        <p className="text-md md:text-lg font-body font-medium opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+        <p className="text-sm sm:text-lg font-body font-medium opacity-80 group-hover:opacity-100 transition-opacity duration-500">
           {project.description}
         </p>
       </div>

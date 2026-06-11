@@ -2,12 +2,12 @@ const Home = () => {
   return (
     <div
       id="home"
-      className="w-full h-dvh @container text-primary-default dark:text-primary-dark px-4 sm:px-8 flex flex-col items-start justify-center"
+      className="w-full h-dvh @container text-primary-default dark:text-primary-dark px-8 md:px-16 flex flex-col items-start justify-center"
     >
       {/* Left: The Heavy Hook */}
-      <div className="w-full text-left flex flex-col items-start">
+      <div className="max-w-7xl mx-auto w-full text-left flex flex-col items-start ">
         <span className="text-3xl md:text-5xl font-medium">I'm</span>
-        <h1 className="text-[4rem] sm:text-[8rem] font-display font-bold leading-[0.8] tracking-tight mt-2">
+        <h1 className="text-[5rem] sm:text-[8rem] max-sm:text-[4rem] font-display font-bold leading-[0.8] tracking-tight mt-2">
           Cedrick.
         </h1>
         {/* <button className="p-2 mt-8 md:bg-primary-default dark:md:bg-primary-dark md:rounded-md md:text-primary-dark dark:md:text-primary-default text-primary-default dark:text-primary-dark underline md:text-sm text-xs">
@@ -17,7 +17,7 @@ const Home = () => {
 
       {/* Right: The Grounded Anchor */}
       {/* Centered on mobile, aligned to the right on desktop */}
-      <div className="w-full flex flex-col items-start text-start mt-12">
+      <div className="max-w-7xl mx-auto w-full flex flex-col items-start text-start mt-12">
         <p className="text-lg sm:text-xl font-medium max-w-md tracking-wide">
           I turn complex problems into simple, reliable web and mobile
           experiences.
