@@ -15,7 +15,7 @@ const About = () => {
             Specs.
           </h2>
 
-          <p className="font-body text-xl md:text-2xl text-secondary-dark dark:text-secondary-default leading-relaxed">
+          <p className=" text-xl md:text-2xl text-secondary-dark dark:text-secondary-default leading-relaxed">
             I don't just build interfaces; I engineer systems. Over the last
             four years, I've designed multi-tenant architectures, integrated
             biometric KYC flows, and tuned frontend performance until it snaps.
@@ -26,24 +26,24 @@ const About = () => {
         <div className="lg:col-span-7 flex flex-col gap-16 lg:mt-4">
           {/* Experience Block */}
           <div>
-            <h3 className="text-sm font-body uppercase tracking-widest text-secondary-dark dark:text-primary-dark mb-8 border-b border-secondary-light/30 dark:border-primary-dark/30 pb-4">
+            <h3 className="text-sm font-medium uppercase tracking-widest text-secondary-dark dark:text-primary-dark mb-8 border-b border-secondary-light/30 dark:border-primary-dark/30 pb-4">
               Work Experience
             </h3>
             <div className="flex flex-col gap-8">
               {workExperience.map((work, index) => (
                 <div
                   key={index}
-                  className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 group"
+                  className="flex flex-col sm:flex-row md:items-baseline justify-between gap-2 group"
                 >
                   <div className="flex flex-col">
                     <h4 className="text-2xl font-heading font-semibold transition-colors">
                       {work.title}
                     </h4>
-                    <span className="text-lg font-body text-secondary-dark dark:text-accent-light">
+                    <span className="text-lg text-secondary-dark dark:text-accent-light">
                       {work.company}
                     </span>
                   </div>
-                  <div className="flex flex-col md:items-end text-left md:text-right font-body">
+                  <div className="flex flex-col items-start md:items-end text-left md:text-right">
                     <span className="text-md text-primary-dark dark:text-accent-light font-medium">
                       {work.type}
                     </span>
@@ -58,19 +58,19 @@ const About = () => {
 
           {/* Education Block */}
           <div>
-            <h3 className="text-sm font-body uppercase tracking-widest text-secondary-dark dark:text-primary-dark mb-8 border-b dark:border-primary-dark/30 pb-4">
+            <h3 className="text-sm uppercase tracking-widest text-secondary-dark dark:text-primary-dark mb-8 border-b dark:border-primary-dark/30 pb-4">
               Education
             </h3>
-            <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
+            <div className="flex flex-col sm:flex-row md:items-baseline justify-between gap-2">
               <div className="flex flex-col">
                 <h4 className="text-2xl font-heading font-semibold">
                   BS Information Technology
                 </h4>
-                <span className="text-lg font-body text-accent-light">
+                <span className="text-lg text-accent-light">
                   Saint Louis College - San Fernando City, La Union
                 </span>
               </div>
-              <div className="flex flex-col md:items-end text-left md:text-right font-body">
+              <div className="flex flex-col md:items-end text-left md:text-right">
                 <span className="text-md text-primary-dark font-medium">
                   Graduated
                 </span>
