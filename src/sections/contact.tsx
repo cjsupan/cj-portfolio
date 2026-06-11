@@ -51,7 +51,7 @@ const Contact = () => {
               </a>
 
               <a
-                href="https://github.com/your-github-username" // <-- Add your GitHub here
+                href="https://github.com/cjsupan" // <-- Add your GitHub here
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 group"
