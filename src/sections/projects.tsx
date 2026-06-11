@@ -13,9 +13,9 @@ const Projects = () => {
       id="projects"
       className="w-full min-h-dvh flex flex-col justify-center py-12 md:py-20 bg-background-dark text-primary-dark dark:bg-accent-dark/10 dark:text-primary-dark relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto w-full px-8 sm:px-16 mb-12 flex flex-col md:flex-row md:items-end sm:justify-between items-center gap-8">
+      <div className="max-w-7xl mx-auto w-full px-8 sm:px-8 mb-12 flex flex-col md:flex-row md:items-end sm:justify-between items-center gap-8">
         {/* The Heavy Header */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 max-md:w-full">
           <h2 className="text-6xl sm:text-8xl font-heading font-bold leading-none tracking-tight">
             Shipped.
           </h2>
