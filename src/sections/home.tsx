@@ -2,7 +2,7 @@ const Home = () => {
   return (
     <div
       id="home"
-      className="w-full h-dvh @container text-primary-default px-6 md:px-16 flex flex-col items-start justify-center md:flex-row md:items-center md:justify-between"
+      className="w-full h-dvh @container text-primary-default dark:text-primary-dark px-6 md:px-16 flex flex-col items-start justify-center md:flex-row md:items-center md:justify-between"
     >
       {/* Left: The Heavy Hook */}
       <div className="w-full text-center md:text-left flex flex-col items-start md:items-start">
@@ -10,9 +10,9 @@ const Home = () => {
         <h1 className="text-[clamp(4rem,15vw,12rem)] font-display font-bold leading-[0.8] tracking-tight mt-2">
           Cedrick.
         </h1>
-        <button className="p-2 mt-8 md:bg-primary-default md:rounded-md md:text-primary-dark text-primary-default md:no-underline md:text-sm text-xs">
+        {/* <button className="p-2 mt-8 md:bg-primary-default dark:md:bg-primary-dark md:rounded-md md:text-primary-dark dark:md:text-primary-default text-primary-default dark:text-primary-dark underline md:text-sm text-xs">
           Hire Me
-        </button>
+        </button> */}
       </div>
 
       {/* Right: The Grounded Anchor */}
