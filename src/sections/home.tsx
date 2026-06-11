@@ -1,27 +1,30 @@
 const Home = () => {
   return (
-    <div id="home" className="w-full @container">
-      <div className="@container w-full flex @min-md:flex-row flex-col-reverse gap-8 @min-lg:gap-2 @max-md:gap-16 mb-20 items-center @md:p-8 @lg:mt-16 @xl:p-16 @lg:justify-evenly">
-        <div className="text-center font-semibold text-primary-light dark:text-primary-dark">
-          <span className="lg:text-5xl max-md:text-4xl">Hi 👋, My name is</span>
-          <br />
-          <span className="font-bold inline-block text-transparent bg-clip-text lg:text-7xl max-md:text-5xl bg-linear-65 from-[#13B0F5] to-[#E70FAA] dark:bg-linear-65 dark:from-[#E70FAA] dark:to-[#13B0F5] transition duration-1000 ease-in-out">
-            Cedrick
-          </span>
-          <br />
-          <span className="lg:text-5xl max-md:text-4xl">
-            I build things for web
-          </span>
-        </div>
+    <div
+      id="home"
+      className="w-full h-dvh @container text-primary-default px-6 md:px-16 flex flex-col items-start justify-center md:flex-row md:items-center md:justify-between"
+    >
+      {/* Left: The Heavy Hook */}
+      <div className="w-full text-center md:text-left flex flex-col items-start md:items-start">
+        <span className="text-3xl md:text-5xl font-medium">I'm</span>
+        <h1 className="text-[clamp(4rem,15vw,12rem)] font-display font-bold leading-[0.8] tracking-tight mt-2">
+          Cedrick.
+        </h1>
+        <button className="p-2 mt-8 md:bg-primary-default md:rounded-md md:text-primary-dark text-primary-default md:no-underline md:text-sm text-xs">
+          Hire Me
+        </button>
+      </div>
 
-        <div className=" rounded-full relative overflow-hidden @max-lg:size-52 @min-lg:size-72 flex-shrink-0 bg-linear-65 from-[#13B0F5] to-[#E70FAA] dark:bg-linear-65 dark:from-[#E70FAA] dark:to-[#13B0F5] transition duration-1000 ease-in-out">
-          <img
-            src="/profile.png"
-            alt="Cedrick John Supan"
-            className="w-full h-full rounded-full object-cover bg-transparent"
-            loading="lazy"
-          />
-        </div>
+      {/* Right: The Grounded Anchor */}
+      {/* Centered on mobile, aligned to the right on desktop */}
+      <div className="w-full flex flex-col items-start md:items-end text-start md:text-right mt-12 md:mt-0">
+        <p className="text-xl md:text-2xl font-medium max-w-sm">
+          I turn complex problems into simple, reliable web and mobile
+          experiences.
+        </p>
+        <p className="text-base md:text-lg mt-4 max-w-xs opacity-80">
+          Full-Stack Developer specializing in React, Next.js, and TypeScript.
+        </p>
       </div>
     </div>
   );

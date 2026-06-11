@@ -1,110 +1,72 @@
-"use client";
-
-import { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const Contact = () => {
-  const formRef = useRef<HTMLFormElement>(null);
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
-    setSuccess(false);
-
-    if (!formRef.current) return;
-
-    // Auto-fill time
-    const timeInput =
-      formRef.current.querySelector<HTMLInputElement>("input[name='time']");
-    if (timeInput) {
-      timeInput.value = new Date().toLocaleString();
-    }
-
-    emailjs
-      .sendForm(
-        "service_ole3gon", // replace with your EmailJS Service ID
-        "template_m3fmpig", // replace with your EmailJS Template ID
-        formRef.current,
-        "vMfAGgnilrQ0IU8R6" // replace with your EmailJS Public Key
-      )
-      .then(() => {
-        setSuccess(true);
-        formRef.current?.reset();
-      })
-      .catch((err) => {
-        console.error("EmailJS error:", err);
-        setError("Failed to send message. Please try again.");
-      })
-      .finally(() => setLoading(false));
-  };
-
   return (
-    <div
+    <section
       id="contact"
-      className="w-full flex flex-col justify-evenly mb-20 gap-4"
+      className="w-full h-dvh snap-start flex flex-col justify-center px-8 md:px-16 py-20 bg-background-dark text-primary-dark"
     >
-      <h2 className="text-center font-bold text-6xl bg-linear-65 from-[#13B0F5] to-[#E70FAA] dark:bg-linear-65 dark:from-[#E70FAA] dark:to-[#13B0F5] text-transparent bg-clip-text">
-        Get in Touch
-      </h2>
-
-      <form
-        ref={formRef}
-        onSubmit={handleSubmit}
-        className="flex flex-col gap-4 w-full max-w-xl mx-auto mt-8"
-      >
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          required
-          className="p-3 rounded-md ring-2 ring-primary-light focus:outline-none focus:ring-2 focus:ring-primary-light bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-white text-secondary-light"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          required
-          className="p-3 rounded-md ring-2 ring-primary-light focus:outline-none focus:ring-2 focus:ring-primary-light bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-white text-secondary-light"
-        />
-        <input
-          type="text"
-          name="subject"
-          placeholder="Subject"
-          required
-          className="p-3 rounded-md ring-2 ring-primary-light focus:outline-none focus:ring-2 focus:ring-primary-light bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-white text-secondary-light"
-        />
-        {/* Hidden input for time */}
-        <input type="hidden" name="time" />
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          required
-          rows={5}
-          className="p-3 rounded-md ring-2 ring-primary-light focus:outline-none focus:ring-2 focus:ring-primary-light bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-white text-secondary-light"
-        />
-
-        <button
-          type="submit"
-          disabled={loading}
-          className="bg-primary-light text-white py-3 rounded-md font-semibold hover:bg-primary-default "
-        >
-          {loading ? "Sending..." : "Send Message"}
-        </button>
-
-        {success && (
-          <p className="text-green-500 mt-2 dark:text-green-400">
-            Message sent successfully!
+      <div className="max-w-7xl mx-auto w-full flex flex-col justify-between h-full">
+        {/* Top: The Final Hook */}
+        <div className="flex flex-col gap-6 mt-12 md:mt-24">
+          <h2 className="text-6xl md:text-[10rem] font-heading font-bold leading-none tracking-tighter">
+            Let's build.
+          </h2>
+          <p className="font-body text-xl md:text-2xl text-secondary-dark max-w-2xl leading-relaxed">
+            Based in Mandaluyong City, Philippines. Focused on building and
+            modernizing scalable web applications using React and Next.js.
           </p>
-        )}
-        {error && (
-          <p className="text-red-500 mt-2 dark:text-red-400">{error}</p>
-        )}
-      </form>
-    </div>
+        </div>
+
+        {/* Bottom: The Links (Clean, No Form) */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between border-t border-color-secondary-dark/30 pt-8 mb-12 gap-12">
+          <div className="flex flex-col gap-2">
+            <span className="text-sm font-body uppercase tracking-widest text-secondary-dark">
+              Direct
+            </span>
+            <a
+              href="mailto:supancj18@gmail.com"
+              className="text-2xl font-heading font-semibold hover:text-primary-light transition-colors duration-300"
+            >
+              supancj18@gmail.com
+            </a>
+          </div>
+
+          <div className="flex flex-col gap-2 md:items-end">
+            <span className="text-sm font-body uppercase tracking-widest text-secondary-dark">
+              Network
+            </span>
+            <div className="flex gap-8">
+              <a
+                href="https://www.linkedin.com/in/cedrick-john-supan"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 group"
+                aria-label="LinkedIn Profile"
+              >
+                <Linkedin className="w-6 h-6 text-secondary-light group-hover:text-primary-light transition-colors duration-300" />
+                <span className="text-lg font-heading font-semibold hidden md:block group-hover:text-primary-light transition-colors duration-300">
+                  LinkedIn
+                </span>
+              </a>
+
+              <a
+                href="https://github.com/your-github-username" // <-- Add your GitHub here
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 group"
+                aria-label="GitHub Profile"
+              >
+                <Github className="w-6 h-6 text-secondary-light group-hover:text-primary-light transition-colors duration-300" />
+                <span className="text-lg font-heading font-semibold hidden md:block group-hover:text-primary-light transition-colors duration-300">
+                  GitHub
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 

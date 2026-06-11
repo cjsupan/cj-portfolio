@@ -1,75 +1,71 @@
 import { projects } from "../constants/projects";
 import { ProjectCard } from "../components/projectCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-import { Pagination } from "swiper/modules";
-
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Pagination, Navigation } from "swiper/modules";
+import { ArrowLeft, ArrowRight } from "lucide-react"; // Using sharper arrows
 import { useRef } from "react";
 
 const Projects = () => {
   const swiperRef = useRef<any>(null);
 
   return (
-    <div
+    <section
       id="projects"
-      className="w-full flex flex-col gap-8 @max-md:p-4 @min-md:p-14"
+      className="w-full min-h-dvh flex flex-col justify-center py-12 md:py-20 bg-background-default text-primary-default relative overflow-hidden"
     >
-      <div className="flex flex-col gap-2">
-        <h2 className="text-center font-bold text-4xl sm:text-5xl md:text-6xl bg-gradient-to-r from-blue-500 to-pink-500 dark:from-pink-500 dark:to-blue-500 inline-block text-transparent bg-clip-text mx-auto">
-          Projects
-        </h2>
-        <h4 className="font-semibold text-center text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300">
-          Things I've worked with recently
-        </h4>
+      <div className="max-w-7xl mx-auto w-full px-8 md:px-16 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
+        {/* The Heavy Header */}
+        <div className="flex flex-col gap-4">
+          <h2 className="text-6xl md:text-8xl font-heading font-bold leading-none tracking-tight">
+            Shipped.
+          </h2>
+          <p className="font-body text-xl md:text-2xl text-secondary-light">
+            Architectures, integrations, and production platforms.
+          </p>
+        </div>
+
+        {/* Minimalist Custom Navigation */}
+        <div className="flex gap-4 z-20">
+          <button
+            className="p-4 border border-primary-default hover:bg-primary-default hover:text-secondary-dark transition-colors duration-300"
+            onClick={() => swiperRef.current?.slidePrev()}
+            aria-label="Previous Project"
+          >
+            <ArrowLeft className="w-6 h-6" strokeWidth={1.5} />
+          </button>
+          <button
+            className="p-4 border border-primary-default hover:bg-primary-default hover:text-secondary-dark transition-colors duration-300"
+            onClick={() => swiperRef.current?.slideNext()}
+            aria-label="Next Project"
+          >
+            <ArrowRight className="w-6 h-6" strokeWidth={1.5} />
+          </button>
+        </div>
       </div>
 
-      <div className="relative w-full">
-        <button
-          className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-20 bg-white/95 hover:bg-white dark:bg-gray-800/95 dark:hover:bg-gray-800 shadow-lg rounded-full p-1.5 sm:p-2 transition-all duration-200 backdrop-blur-sm border border-gray-200 dark:border-gray-700"
-          onClick={() => swiperRef.current?.slidePrev()}
-          aria-label="Scroll left"
-        >
-          <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 dark:text-gray-300" />
-        </button>
-        {/* Right Arrow */}
-        <button
-          className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-20 bg-white/95 hover:bg-white dark:bg-gray-800/95 dark:hover:bg-gray-800 shadow-lg rounded-full p-1.5 sm:p-2 transition-all duration-200 backdrop-blur-sm border border-gray-200 dark:border-gray-700"
-          onClick={() => swiperRef.current?.slideNext()}
-          aria-label="Scroll right"
-        >
-          <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 dark:text-gray-300" />
-        </button>
-
-        {/* Swiper */}
+      {/* The Swiper Track */}
+      <div className="w-full pl-8 md:pl-16">
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           direction={"horizontal"}
-          slidesPerView={1} // start with 1 for mobile
-          spaceBetween={100}
-          effect="slide"
+          slidesPerView={1.1} // Shows a peek of the next card to imply scrolling
+          spaceBetween={32}
           breakpoints={{
-            375: { slidesPerView: 1.2 },
-            425: { slidesPerView: 1.5 },
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-            1280: { slidesPerView: 4 },
-            1536: { slidesPerView: 6 },
+            640: { slidesPerView: 1.5, spaceBetween: 32 },
+            1024: { slidesPerView: 2.5, spaceBetween: 48 },
+            1536: { slidesPerView: 3.5, spaceBetween: 48 },
           }}
-          centeredSlides={true}
-          modules={[Pagination]}
-          pagination={{ clickable: true }}
-          className="w-full"
+          modules={[Pagination, Navigation]}
+          className="w-full !overflow-visible" /* Allows cards to bleed off the right edge */
         >
           {projects.map((project, index) => (
-            <SwiperSlide key={index} className="flex justify-center p-4 pb-8">
+            <SwiperSlide key={index} className="h-auto">
               <ProjectCard project={project} index={index} />
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -44,9 +44,9 @@ export const projects: Projects[] = [
   {
     title: "In-Store Product Catalog App",
     description:
-      "An in-store product catalog app that allows users to browse products, view details, and compare products. It includes features for searching products and filtering by categories.",
+      "An in-store product catalog app supporting product browsing, side-by-side product comparison, and real-time environmental suitability checks",
     link: "",
-    tech: ["flutter", "Dart", "MySQL"],
+    tech: ["flutter", "Dart"],
     id: "in-store-product-catalog-app",
   },
   {
