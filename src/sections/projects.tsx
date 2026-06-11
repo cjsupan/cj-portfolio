@@ -19,7 +19,7 @@ const Projects = () => {
           <h2 className="text-6xl sm:text-8xl font-heading font-bold leading-none tracking-tight">
             Shipped.
           </h2>
-          <p className="font-body text-xl md:text-2xl ">
+          <p className="text-xl md:text-2xl ">
             Architectures, integrations, and production platforms.
           </p>
         </div>
