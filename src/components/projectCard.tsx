@@ -9,7 +9,7 @@ interface ProjectCardProps {
   index: number;
 }
 
-export function ProjectCard({ project, index }: ProjectCardProps) {
+export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div
       className="w-full max-w-[400px] h-[450px] flex flex-col justify-between p-8 

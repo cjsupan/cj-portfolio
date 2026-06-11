@@ -1,5 +1,4 @@
 import "./styles/App.css";
-import NavBar from "./components/navBar";
 import ThemeToggle from "./components/themeToggle";
 import Home from "./sections/home";
 import About from "./sections/about";
