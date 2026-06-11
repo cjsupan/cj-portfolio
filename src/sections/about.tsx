@@ -4,7 +4,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="w-full min-h-dvh flex flex-col justify-center px-8 md:px-16 py-20 bg-color-background-default text-primary-default"
+      className="w-full min-h-dvh flex flex-col justify-center px-8 md:px-16 py-20 bg-background-dark text-primary-dark dark:bg-accent-dark/10 dark:text-primary-dark"
     >
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
         {/* Left Column: The Heavy Header & Anchor */}
@@ -15,7 +15,7 @@ const About = () => {
             Specs.
           </h2>
 
-          <p className="font-body text-xl md:text-2xl text-secondary-light leading-relaxed">
+          <p className="font-body text-xl md:text-2xl text-secondary-dark dark:text-secondary-default leading-relaxed">
             I don't just build interfaces; I engineer systems. Over the last
             four years, I've designed multi-tenant architectures, integrated
             biometric KYC flows, and tuned frontend performance until it snaps.
@@ -26,7 +26,7 @@ const About = () => {
         <div className="lg:col-span-7 flex flex-col gap-16 lg:mt-4">
           {/* Experience Block */}
           <div>
-            <h3 className="text-sm font-body uppercase tracking-widest text-secondary-light mb-8 border-b border-color-secondary-dark/30 pb-4">
+            <h3 className="text-sm font-body uppercase tracking-widest text-secondary-dark dark:text-primary-dark mb-8 border-b border-secondary-light/30 dark:border-primary-dark/30 pb-4">
               Work Experience
             </h3>
             <div className="flex flex-col gap-8">
@@ -36,18 +36,18 @@ const About = () => {
                   className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 group"
                 >
                   <div className="flex flex-col">
-                    <h4 className="text-2xl font-heading font-semibold group-hover:text-secondary-light transition-colors">
+                    <h4 className="text-2xl font-heading font-semibold transition-colors">
                       {work.title}
                     </h4>
-                    <span className="text-lg font-body text-secondary-light">
+                    <span className="text-lg font-body text-secondary-dark dark:text-accent-light">
                       {work.company}
                     </span>
                   </div>
                   <div className="flex flex-col md:items-end text-left md:text-right font-body">
-                    <span className="text-md text-primary-default font-medium">
+                    <span className="text-md text-primary-dark dark:text-accent-light font-medium">
                       {work.type}
                     </span>
-                    <span className="text-sm text-secondary-light">
+                    <span className="text-sm text-secondary-light dark:text-secondary-dark">
                       {work.date}
                     </span>
                   </div>
@@ -58,7 +58,7 @@ const About = () => {
 
           {/* Education Block */}
           <div>
-            <h3 className="text-sm font-body uppercase tracking-widest text-secondary-light mb-8 border-b border-color-secondary-dark/30 pb-4">
+            <h3 className="text-sm font-body uppercase tracking-widest text-secondary-dark dark:text-primary-dark mb-8 border-b dark:border-primary-dark/30 pb-4">
               Education
             </h3>
             <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
@@ -66,17 +66,15 @@ const About = () => {
                 <h4 className="text-2xl font-heading font-semibold">
                   BS Information Technology
                 </h4>
-                <span className="text-lg font-body text-secondary-light">
+                <span className="text-lg font-body text-accent-light">
                   Saint Louis College - San Fernando City, La Union
                 </span>
               </div>
               <div className="flex flex-col md:items-end text-left md:text-right font-body">
-                <span className="text-md text-primary-default font-medium">
+                <span className="text-md text-primary-dark font-medium">
                   Graduated
                 </span>
-                <span className="text-sm text-secondary-light">
-                  2015 — 2022
-                </span>
+                <span className="text-sm text-accent-light">2015 — 2022</span>
               </div>
             </div>
           </div>

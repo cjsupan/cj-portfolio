@@ -11,7 +11,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="w-full min-h-dvh flex flex-col justify-center py-12 md:py-20 bg-background-default text-primary-default relative overflow-hidden"
+      className="w-full min-h-dvh flex flex-col justify-center py-12 md:py-20 bg-background-dark text-primary-dark dark:bg-accent-dark/10 dark:text-primary-dark relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto w-full px-8 md:px-16 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
         {/* The Heavy Header */}
@@ -19,7 +19,7 @@ const Projects = () => {
           <h2 className="text-6xl md:text-8xl font-heading font-bold leading-none tracking-tight">
             Shipped.
           </h2>
-          <p className="font-body text-xl md:text-2xl text-secondary-light">
+          <p className="font-body text-xl md:text-2xl ">
             Architectures, integrations, and production platforms.
           </p>
         </div>
@@ -27,14 +27,14 @@ const Projects = () => {
         {/* Minimalist Custom Navigation */}
         <div className="flex gap-4 z-20">
           <button
-            className="p-4 border border-primary-default hover:bg-primary-default hover:text-secondary-dark transition-colors duration-300"
+            className="p-4 border border-primary-dark hover:bg-primary-dark hover:text-primary-light dark:border-primary-dark dark:hover:border-primary-default dark:hover:bg-primary-default dark:hover:text-primary-dark transition-colors duration-200"
             onClick={() => swiperRef.current?.slidePrev()}
             aria-label="Previous Project"
           >
             <ArrowLeft className="w-6 h-6" strokeWidth={1.5} />
           </button>
           <button
-            className="p-4 border border-primary-default hover:bg-primary-default hover:text-secondary-dark transition-colors duration-300"
+            className="p-4 border border-primary-dark hover:bg-primary-dark hover:text-primary-light dark:border-primary-dark dark:hover:border-primary-default dark:hover:bg-primary-default dark:hover:text-primary-dark transition-colors duration-200"
             onClick={() => swiperRef.current?.slideNext()}
             aria-label="Next Project"
           >

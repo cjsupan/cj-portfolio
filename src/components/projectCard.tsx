@@ -13,8 +13,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div
       className="w-full max-w-[400px] h-[450px] flex flex-col justify-between p-8 
-                 bg-background-dark text-background-default
-                 hover:bg-primary-default hover:text-background-default
+                 bg-background-light text-primary-light
+                 hover:bg-primary-light hover:text-primary-dark
+                 dark:bg-background-dark dark:text-primary-dark
+                 dark:hover:bg-accent-light dark:hover:text-primary-light
                  transition-colors duration-500 cursor-pointer group rounded-xl"
     >
       {/* Top: Massive Title & Description */}
