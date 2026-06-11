@@ -27,14 +27,14 @@ const Projects = () => {
         {/* Minimalist Custom Navigation */}
         <div className="max-md:w-full flex flex-row md:gap-4 gap-8 justify-between z-20">
           <button
-            className="p-4 border border-primary-dark hover:bg-primary-dark hover:text-primary-light dark:border-primary-dark dark:hover:border-primary-default dark:hover:bg-primary-default dark:hover:text-primary-dark transition-colors duration-200"
+            className="p-4 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-200"
             onClick={() => swiperRef.current?.slidePrev()}
             aria-label="Previous Project"
           >
             <ArrowLeft className="w-6 h-6" strokeWidth={1.5} />
           </button>
           <button
-            className="p-4 border border-primary-dark hover:bg-primary-dark hover:text-primary-light dark:border-primary-dark dark:hover:border-primary-default dark:hover:bg-primary-default dark:hover:text-primary-dark transition-colors duration-200"
+            className="p-4 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-200"
             onClick={() => swiperRef.current?.slideNext()}
             aria-label="Next Project"
           >

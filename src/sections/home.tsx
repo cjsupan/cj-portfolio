@@ -22,9 +22,19 @@ const Home = () => {
           I turn complex problems into simple, reliable web and mobile
           experiences.
         </p>
-        <p className="text-base md:text-lg mt-4 max-w-xs opacity-80">
+        <p className="text-base md:text-lg mt-4 max-w-xs text-accent-dark dark:text-accent-light">
           Full-Stack Developer specializing in React, Next.js, and TypeScript.
         </p>
+        <br />
+
+        <a
+          href="/Cedrick John Supan - Resume.pdf" // Ensure the file is in your /public folder
+          download="Cedrick John Supan - Resume.pdf"
+          className="text-primary-default dark:text-primary-dark font-heading 
+             transition-all duration-300 flex items-center gap-2 underline"
+        >
+          <span className="text-md">Hire Me</span>
+        </a>
       </div>
     </div>
   );
