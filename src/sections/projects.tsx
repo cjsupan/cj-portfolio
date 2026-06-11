@@ -27,14 +27,14 @@ const Projects = () => {
         {/* Minimalist Custom Navigation */}
         <div className="max-md:w-full flex flex-row md:gap-4 gap-8 justify-between z-20">
           <button
-            className="p-4 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-200"
+            className="p-4 hover:text-accent-dark hover:cursor-pointer transition-colors duration-200"
             onClick={() => swiperRef.current?.slidePrev()}
             aria-label="Previous Project"
           >
             <ArrowLeft className="w-6 h-6" strokeWidth={1.5} />
           </button>
           <button
-            className="p-4 hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-200"
+            className="p-4 hover:text-accent-dark hover:cursor-pointer transition-colors duration-200"
             onClick={() => swiperRef.current?.slideNext()}
             aria-label="Next Project"
           >
@@ -50,6 +50,8 @@ const Projects = () => {
           direction={"horizontal"}
           slidesPerView={1.1} // Shows a peek of the next card to imply scrolling
           spaceBetween={32}
+          allowTouchMove
+          grabCursor
           breakpoints={{
             640: { slidesPerView: 1.5, spaceBetween: 32 },
             1024: { slidesPerView: 2.5, spaceBetween: 48 },

@@ -2,6 +2,37 @@ import type { Projects } from "../types/project";
 
 export const projects: Projects[] = [
   {
+    title: "Floowd",
+    description:
+      "A SaaS platform that automates financial document processing by extracting, validating, and structuring data from unstructured files, then powering end-to-end workflows for underwriting, risk checks, and decisioning in lending operations.",
+    link: "https://www.floowed.com/",
+    tech: [
+      "React",
+      "Next.js",
+      "React-flow",
+      "TypeScript",
+      "Tailwind CSS",
+      "Workflow Automation",
+    ],
+    id: "ai-document-workflow-automation",
+  },
+  {
+    title: "Lender Deal Management Portal",
+    description:
+      "A lender-facing dashboard that allows financial institutions to view, filter, and manage matched SME financing opportunities, including deal evaluation, application tracking, and pipeline management.",
+    link: "https://dashboard.kredithero.com/login",
+    tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "ShadCN UI"],
+    id: "lender-deal-portal",
+  },
+  {
+    title: "SME Deal Marketplace",
+    description:
+      "a fintech platform that connects businesses with multiple lenders through a single application, using AI-driven assessment and document processing to streamline loan matching, comparison, and approval.",
+    link: "https://kredithero.com/",
+    tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "ShadCN UI"],
+    id: "sme-deal-marketplace",
+  },
+  {
     title: "La Salle Green Hills Admission Website",
     description:
       "A comprehensive admission website for La Salle Green Hills, allowing students to apply online, upload documents, and track their application status.",
@@ -15,22 +46,45 @@ export const projects: Projects[] = [
       "An admin portal for La Salle Green Hills, enabling administrators to manage student applications, view statistics, and approve or reject applications.",
     link: "",
     tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "MUI"],
-    id: "admission-system",
+    id: "admission-portal",
   },
   {
-    title: "ISO Document Management System",
+    title: "Security Compliance & GRC Platform",
     description:
-      "A document management system for ISO standards, allowing users to upload/export, categorize, and search for documents related to ISO compliance.",
+      "A GRC platform for ISO 27001 compliance, mapping security controls to frameworks, managing audit evidence, and generating SOA and supplier reports.",
     link: "",
-    tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Axios"],
-    id: "iso-document-management-system",
+    tech: ["React", "Next.js", "TypeScript", "Ant Design", "Redux"],
+    id: "security-grc-platform",
+  },
+  {
+    title: "Project Pulse",
+    description:
+      "An internal project management platform for tracking project lifecycles, logging progress updates, and managing stakeholder subscriptions. Features role-based access control, archive workflows, and automated weekly email digests to keep subscribers informed.",
+    link: "",
+    tech: [
+      "React",
+      "Next.js",
+      "Redux",
+      "React Query",
+      "Mantine UI",
+      "Ant Design",
+    ],
+    id: "project-pulse",
+  },
+  {
+    title: "Product Catalog – B2B Field Sales App",
+    description:
+      "A product catalog app for field sales reps to browse product details, view alternatives, bookmark products, and flag focus items per customer.",
+    link: "",
+    tech: ["Flutter", "Dart", "Provider"],
+    id: "abena-product-catalog",
   },
   {
     title: "ASIA CEO AWARDS",
     description:
       "A website for the ASIA CEO AWARDS, showcasing the nominees, winners, and event details. It includes a nomination form and a voting system.",
     link: "https://www.asia-ceo-awards.org/",
-    tech: ["React", "Next.js", "Redux", "AntDesign"],
+    tech: ["React", "Next.js", "Redux", "Ant Design"],
     id: "asia-ceo-awards",
   },
   {
@@ -40,14 +94,6 @@ export const projects: Projects[] = [
     link: "",
     tech: ["PHP", "CodeIgniter", "MySQL", "Bootstrap"],
     id: "voucher-management-system",
-  },
-  {
-    title: "In-Store Product Catalog App",
-    description:
-      "An in-store product catalog app supporting product browsing, side-by-side product comparison, and real-time environmental suitability checks",
-    link: "",
-    tech: ["Flutter", "Dart"],
-    id: "in-store-product-catalog-app",
   },
   {
     title: "4Gives",

@@ -8,8 +8,8 @@ const Technologies = () => {
     >
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-24">
         {/* Left: The Hook */}
-        <div className="lg:col-span-5 flex flex-col justify-center">
-          <h2 className="text-[clamp(3rem,10vw,8rem)] font-heading font-bold leading-[0.9] tracking-tight mb-8 dark:text-primary-dark">
+        <div className="lg:col-span-5 flex flex-col justify-start">
+          <h2 className="text-6xl sm:text-8xl font-heading font-bold leading-[0.9] tracking-tight mb-8 dark:text-primary-dark">
             The
             <br />
             Arsenal.

@@ -17,14 +17,16 @@ export function ProjectCard({ project }: ProjectCardProps) {
                  hover:bg-primary-light hover:text-primary-dark
                  dark:bg-background-dark dark:text-primary-dark
                  dark:hover:bg-accent-light dark:hover:text-primary-light
-                 transition-colors duration-500 cursor-pointer group rounded-xl"
+                 transition-all duration-500 cursor-pointer group rounded-xl
+                  scale-95 hover:scale-100 transform-gpu
+                 "
     >
       {/* Top: Massive Title & Description */}
       <div className="flex flex-col gap-6">
         <h3 className="text-4xl font-heading font-bold leading-none tracking-tight">
           {project.title}
         </h3>
-        <p className="text-lg font-body font-medium opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+        <p className="text-md md:text-lg font-body font-medium opacity-80 group-hover:opacity-100 transition-opacity duration-500">
           {project.description}
         </p>
       </div>
