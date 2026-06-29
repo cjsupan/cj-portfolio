@@ -1,10 +1,10 @@
 import "./styles/App.css";
-import ThemeToggle from "./components/ThemeToggleTemp";
-import Home from "./sections/HomeTemp";
-import About from "./sections/AboutTemp";
-import Technologies from "./sections/TechnologiesTemp";
-import Projects from "./sections/ProjectsTemp";
-import Contact from "./sections/ContactTemp";
+import ThemeToggle from "./components/ThemeToggle";
+import Home from "./sections/Home";
+import About from "./sections/About";
+import Technologies from "./sections/Technologies";
+import Projects from "./sections/Projects";
+import Contact from "./sections/Contact";
 
 function App() {
   return (
