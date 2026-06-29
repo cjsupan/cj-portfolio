@@ -1,4 +1,4 @@
 export interface Technology {
   name: string;
-  logo: string;
+  category: "client" | "server" | "data" | "tooling";
 }

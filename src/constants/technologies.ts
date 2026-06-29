@@ -1,72 +1,32 @@
 import type { Technology } from "../types/technology";
 
 export const technologies: Technology[] = [
-  {
-    name: "HTML",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg",
-  },
-  {
-    name: "CSS",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg",
-  },
-  {
-    name: "JavaScript",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg",
-  },
-  {
-    name: "TypeScript",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-plain.svg",
-  },
-  {
-    name: "React",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-  },
-  {
-    name: "Next",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
-  },
-  {
-    name: "Redux",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg",
-  },
-  {
-    name: "Tailwindcss",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
-  },
-  {
-    name: "MaterialUI",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materialui/materialui-plain.svg",
-  },
-  {
-    name: "Jest",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg",
-  },
-  {
-    name: "MongoDB",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-plain.svg",
-  },
-  {
-    name: "MySQL",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
-  },
-  {
-    name: "Git",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-plain.svg",
-  },
-  {
-    name: "Figma",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
-  },
-  {
-    name: "Postman",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-plain.svg",
-  },
-  {
-    name: "Zustand",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/zustand/zustand-plain.svg",
-  },
-  {
-    name: "FastAPI",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg",
-  },
+  // Client
+  { name: "React", category: "client" },
+  { name: "Next.js", category: "client" },
+  { name: "TypeScript", category: "client" },
+  { name: "Tailwind CSS", category: "client" },
+  { name: "Flutter", category: "client" },
+
+  // Server
+  { name: "Node.js", category: "server" },
+  { name: "Express", category: "server" },
+  { name: "NestJS", category: "server" },
+  { name: "GCP", category: "server" },
+
+  // Data & State
+  { name: "GraphQL", category: "data" },
+  { name: "Prisma", category: "data" },
+  { name: "TanStack Query", category: "data" },
+  { name: "PostgreSQL", category: "data" },
+  { name: "MySQL", category: "data" },
+  { name: "MongoDB", category: "data" },
+  { name: "Firebase", category: "data" },
+
+  // Tooling
+  { name: "Vercel", category: "tooling" },
+  { name: "Git", category: "tooling" },
+  { name: "Figma", category: "tooling" },
+  { name: "Postman", category: "tooling" },
+  { name: "Jest", category: "tooling" },
 ];
