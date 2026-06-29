@@ -2,6 +2,14 @@ import type { Projects } from "../types/project";
 
 export const projects: Projects[] = [
   {
+    title: "Sala",
+    description:
+      "A modern furniture store offering timeless Scandinavian and Japandi-inspired pieces designed to create warm, functional, and welcoming living spaces.",
+    link: "https://sala-eta.vercel.app/",
+    tech: ["Next.js", "NestJS", "GraphQL", "Prisma", "PostgreSQL"],
+    id: "sala",
+  },
+  {
     title: "Floowd",
     description:
       "A SaaS platform that automates financial document processing by extracting, validating, and structuring data from unstructured files, then powering end-to-end workflows for underwriting, risk checks, and decisioning in lending operations.",
@@ -21,7 +29,7 @@ export const projects: Projects[] = [
     description:
       "A lender-facing dashboard that allows financial institutions to view, filter, and manage matched SME financing opportunities, including deal evaluation, application tracking, and pipeline management.",
     link: "https://dashboard.kredithero.com/login",
-    tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "ShadCN UI"],
+    tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "ShadCN"],
     id: "lender-deal-portal",
   },
   {
@@ -29,7 +37,7 @@ export const projects: Projects[] = [
     description:
       "a fintech platform that connects businesses with multiple lenders through a single application, using AI-driven assessment and document processing to streamline loan matching, comparison, and approval.",
     link: "https://kredithero.com/",
-    tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "ShadCN UI"],
+    tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "ShadCN"],
     id: "sme-deal-marketplace",
   },
   {
@@ -84,7 +92,7 @@ export const projects: Projects[] = [
     description:
       "A website for the ASIA CEO AWARDS, showcasing the nominees, winners, and event details. It includes a nomination form and a voting system.",
     link: "https://www.asia-ceo-awards.org/",
-    tech: ["React", "Next.js", "Redux", "Ant Design"],
+    tech: ["Next.js"],
     id: "asia-ceo-awards",
   },
   {
@@ -99,7 +107,7 @@ export const projects: Projects[] = [
     title: "4Gives",
     description:
       "A web application that offers users salary and personal loan, and buy now pay later services. It provides users with a convenient way to manage their finances and make purchases.",
-    link: "",
+    link: "https://4gives.com/",
     tech: ["Next.js", "Zustand", "Tailwind CSS", "Axios"],
     id: "online-food-ordering-system",
   },
