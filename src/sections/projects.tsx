@@ -1,5 +1,5 @@
 import { projects } from "../constants/projects";
-import { ProjectCard } from "../components/projectCard";
+import { ProjectCard } from "../components/ProjectCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 import { ArrowLeft, ArrowRight } from "lucide-react"; // Using sharper arrows

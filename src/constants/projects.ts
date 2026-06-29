@@ -6,7 +6,14 @@ export const projects: Projects[] = [
     description:
       "A modern furniture store offering timeless Scandinavian and Japandi-inspired pieces designed to create warm, functional, and welcoming living spaces.",
     link: "https://sala-eta.vercel.app/",
-    tech: ["Next.js", "NestJS", "GraphQL", "Prisma", "PostgreSQL"],
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "NestJS",
+      "GraphQL",
+      "Prisma",
+      "PostgreSQL",
+    ],
     id: "sala",
   },
   {
@@ -15,21 +22,27 @@ export const projects: Projects[] = [
       "A SaaS platform that automates financial document processing by extracting, validating, and structuring data from unstructured files, then powering end-to-end workflows for underwriting, risk checks, and decisioning in lending operations.",
     link: "https://www.floowed.com/",
     tech: [
-      "React",
       "Next.js",
       "React-flow",
       "TypeScript",
       "Tailwind CSS",
-      "Workflow Automation",
+      "AI Workflow Automation",
     ],
     id: "ai-document-workflow-automation",
   },
   {
-    title: "Lender Deal Management Portal",
+    title: "Lender Marketplace Dashboard",
     description:
       "A lender-facing dashboard that allows financial institutions to view, filter, and manage matched SME financing opportunities, including deal evaluation, application tracking, and pipeline management.",
     link: "https://dashboard.kredithero.com/login",
-    tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "ShadCN"],
+    tech: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "ShadCN",
+      "AI API Integration",
+    ],
     id: "lender-deal-portal",
   },
   {
@@ -37,7 +50,14 @@ export const projects: Projects[] = [
     description:
       "a fintech platform that connects businesses with multiple lenders through a single application, using AI-driven assessment and document processing to streamline loan matching, comparison, and approval.",
     link: "https://kredithero.com/",
-    tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "ShadCN"],
+    tech: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Firebase",
+      "Tailwind CSS",
+      "ShadCN",
+    ],
     id: "sme-deal-marketplace",
   },
   {
