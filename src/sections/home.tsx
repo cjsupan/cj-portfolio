@@ -2,17 +2,19 @@ const Home = () => {
   return (
     <div
       id="home"
-      className="w-full h-dvh @container text-primary-default dark:text-primary-dark px-8 md:px-16 flex flex-col items-start justify-center"
+      className="w-full h-dvh @container text-primary-default dark:text-primary-dark px-6 md:px-16 flex flex-col items-start mt-16 sm:mt-36"
     >
       {/* Left: The Heavy Hook */}
-      <div className="max-w-7xl mx-auto w-full text-left flex flex-col items-start ">
-        <span className="text-3xl md:text-5xl font-medium">I'm</span>
-        <h1 className="text-[5rem] sm:text-[8rem] max-sm:text-[4rem] font-display font-bold leading-[0.8] tracking-tight mt-2">
+      <div className="max-w-7xl mx-auto w-full text-left flex flex-col items-start">
+        <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium">
+          I'm
+        </span>
+        <h1
+          className="font-display font-bold leading-[0.8] tracking-tight mt-2
+                     text-[20vw] sm:text-[18vw] md:text-[16vw] lg:text-[12vw] 2xl:text-[90px]"
+        >
           Cedrick.
         </h1>
-        {/* <button className="p-2 mt-8 md:bg-primary-default dark:md:bg-primary-dark md:rounded-md md:text-primary-dark dark:md:text-primary-default text-primary-default dark:text-primary-dark underline md:text-sm text-xs">
-          Hire Me
-        </button> */}
       </div>
 
       {/* Right: The Grounded Anchor */}
