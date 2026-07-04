@@ -22,7 +22,7 @@ const Technologies = () => {
   return (
     <section
       id="technologies"
-      className="w-full min-h-dvh snap-start flex flex-col justify-center px-8 md:px-16 py-12 md:py-20 bg-background-light text-primary-light dark:bg-background-dark"
+      className="w-full min-h-dvh snap-start flex flex-col justify-center px-8 md:px-16 py-12 md:py-20 bg-background-light text-primary-light dark:bg-background-dark dark:text-primary-dark transition-colors duration-500"
     >
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-24">
         <div className="lg:col-span-5 flex flex-col justify-start">

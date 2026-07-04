@@ -24,7 +24,7 @@ export const workExperience: About[] = [
   },
   {
     title: "Front-End Developer",
-    company: "Volenday",
+    company: "Volenday Group",
     date: "Nov 2021 - Nov 2024",
     type: "Full Time",
     description: " ",
