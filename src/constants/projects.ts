@@ -60,22 +60,22 @@ export const projects: Projects[] = [
     ],
     id: "sme-deal-marketplace",
   },
-  {
-    title: "La Salle Green Hills Admission Website",
-    description:
-      "A comprehensive admission website for La Salle Green Hills, allowing students to apply online, upload documents, and track their application status.",
-    link: "",
-    tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "MUI"],
-    id: "admission-system",
-  },
-  {
-    title: "La Salle Green Hills Admin Portal",
-    description:
-      "An admin portal for La Salle Green Hills, enabling administrators to manage student applications, view statistics, and approve or reject applications.",
-    link: "",
-    tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "MUI"],
-    id: "admission-portal",
-  },
+  // {
+  //   title: "La Salle Green Hills Admission Website",
+  //   description:
+  //     "A comprehensive admission website for La Salle Green Hills, allowing students to apply online, upload documents, and track their application status.",
+  //   link: "",
+  //   tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "MUI"],
+  //   id: "admission-system",
+  // },
+  // {
+  //   title: "La Salle Green Hills Admin Portal",
+  //   description:
+  //     "An admin portal for La Salle Green Hills, enabling administrators to manage student applications, view statistics, and approve or reject applications.",
+  //   link: "",
+  //   tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "MUI"],
+  //   id: "admission-portal",
+  // },
   {
     title: "Security Compliance & GRC Platform",
     description:
@@ -84,21 +84,21 @@ export const projects: Projects[] = [
     tech: ["React", "Next.js", "TypeScript", "Ant Design", "Redux"],
     id: "security-grc-platform",
   },
-  {
-    title: "Project Pulse",
-    description:
-      "An internal project management platform for tracking project lifecycles, logging progress updates, and managing stakeholder subscriptions. Features role-based access control, archive workflows, and automated weekly email digests to keep subscribers informed.",
-    link: "",
-    tech: [
-      "React",
-      "Next.js",
-      "Redux",
-      "React Query",
-      "Mantine UI",
-      "Ant Design",
-    ],
-    id: "project-pulse",
-  },
+  // {
+  //   title: "Project Pulse",
+  //   description:
+  //     "An internal project management platform for tracking project lifecycles, logging progress updates, and managing stakeholder subscriptions. Features role-based access control, archive workflows, and automated weekly email digests to keep subscribers informed.",
+  //   link: "",
+  //   tech: [
+  //     "React",
+  //     "Next.js",
+  //     "Redux",
+  //     "React Query",
+  //     "Mantine UI",
+  //     "Ant Design",
+  //   ],
+  //   id: "project-pulse",
+  // },
   {
     title: "Product Catalog – B2B Field Sales App",
     description:
@@ -130,5 +130,13 @@ export const projects: Projects[] = [
     link: "https://4gives.com/",
     tech: ["Next.js", "Zustand", "Tailwind CSS", "Axios"],
     id: "online-food-ordering-system",
+  },
+  {
+    id: "nda-placeholder",
+    title: "Protected Projects",
+    description:
+      "Several high-impact enterprise applications are currently under NDA.",
+    tech: ["NDA Protected", "Confidential"],
+    link: "",
   },
 ];

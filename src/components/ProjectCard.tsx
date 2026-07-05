@@ -1,15 +1,8 @@
-interface ProjectCardProps {
-  project: {
-    title: string;
-    description: string;
-    tech: string[];
-    link: string;
-    id: string;
-  };
-}
+import type { ProjectCardProps } from "../types/projectCard";
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, index }: ProjectCardProps) {
   const hasLink = !!project.link;
+  const isNDA = project.id === "nda-placeholder";
 
   const content = (
     <div
@@ -22,40 +15,63 @@ export function ProjectCard({ project }: ProjectCardProps) {
                  ${hasLink ? "cursor-pointer" : "cursor-default"}
                 `}
     >
-      {/* Top: Title & Description */}
-      <div className="flex flex-col gap-6">
-        <h3 className="text-2xl sm:text-4xl font-heading font-bold leading-none tracking-tight dark:group-hover:text-accent-light transition-colors duration-300">
+      {isNDA && (
+        <div className="absolute top-8 right-8 text-secondary-light/30 dark:text-secondary-dark/30">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        </div>
+      )}
+
+      <div className="absolute top-8 right-8 flex items-center justify-center">
+        {!isNDA && (
+          <span className="text-sm font-heading font-bold opacity-40 group-hover:opacity-100 transition-opacity duration-300">
+            0{index + 1}
+          </span>
+        )}
+      </div>
+
+      <div className="flex flex-col gap-6 mt-4">
+        <h3 className="text-2xl sm:text-4xl font-heading font-bold leading-none tracking-tight">
           {project.title}
         </h3>
-        <p className="text-sm sm:text-lg font-body font-medium opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+        <p className="text-sm sm:text-lg font-body font-medium opacity-80">
           {project.description}
         </p>
       </div>
 
-      {/* Bottom: Stack + Link status */}
       <div className="flex flex-col gap-4 border-t border-secondary-light/20 dark:border-secondary-dark/30 pt-6 group-hover:border-accent-dark/40 dark:group-hover:border-accent-light/40 transition-colors duration-300">
         <div className="flex items-center justify-between">
           <span className="text-xs font-body uppercase tracking-widest opacity-60">
-            Stack
+            {isNDA ? "Status" : "Stack"}
           </span>
-          {hasLink ? (
+          {hasLink && (
             <span className="text-xs font-body uppercase tracking-widest text-accent-dark dark:text-accent-light -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
               Visit ↗
             </span>
-          ) : (
-            <span className="text-xs font-body uppercase tracking-widest opacity-40">
-              Internal
-            </span>
           )}
         </div>
-        {/* <p className="text-sm font-body leading-relaxed text-secondary-light dark:text-secondary-dark group-hover:text-primary-light dark:group-hover:text-primary-dark transition-colors duration-300">
-          {project.tech.join(", ")}
-        </p> */}
+
         <div className="flex flex-wrap gap-2">
           {project.tech.map((t) => (
             <span
               key={t}
-              className="px-2 py-1 text-[10px] uppercase tracking-wider border border-secondary-light/20 dark:border-secondary-dark/20 rounded-sm text-secondary-light dark:text-secondary-dark group-hover:border-accent-dark dark:group-hover:border-accent-light group-hover:text-accent-dark dark:group-hover:text-accent-light transition-colors duration-500"
+              className={`px-2 py-1 text-[10px] uppercase tracking-wider border rounded-sm transition-colors duration-500 
+                         ${
+                           isNDA
+                             ? "border-secondary-light/10 text-secondary-light/50"
+                             : "border-secondary-light/20 dark:border-secondary-dark/20 text-secondary-light dark:text-secondary-dark group-hover:border-accent-dark dark:group-hover:border-accent-light group-hover:text-accent-dark dark:group-hover:text-accent-light"
+                         }`}
             >
               {t}
             </span>

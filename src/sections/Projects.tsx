@@ -91,7 +91,7 @@ const Projects = () => {
         >
           {projects.map((project, index) => (
             <SwiperSlide key={index} className="h-auto">
-              <ProjectCard project={project} />
+              <ProjectCard project={project} index={index} />
             </SwiperSlide>
           ))}
         </Swiper>
