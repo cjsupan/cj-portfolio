@@ -1,4 +1,11 @@
+import { motion } from "motion/react";
 import { Github, Linkedin } from "lucide-react";
+import {
+  fadeInLeft,
+  fadeInRight,
+  stagger,
+  viewport,
+} from "../utils/animations";
 
 const Contact = () => {
   return (
@@ -7,18 +14,36 @@ const Contact = () => {
       className="w-full h-dvh snap-start flex flex-col justify-center px-8 pt-8 bg-background-dark text-primary-dark dark:bg-background-dark-alt transition-colors duration-500"
     >
       <div className="max-w-7xl mx-auto w-full flex flex-col justify-between h-full">
-        <div className="flex flex-col gap-6 mt-10 md:mt-8">
-          <h2 className="text-6xl sm:text-8xl font-heading font-bold leading-none tracking-tight">
+        <motion.div
+          className="flex flex-col gap-6 mt-10 md:mt-8"
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+        >
+          <motion.h2
+            variants={fadeInLeft}
+            className="text-6xl sm:text-8xl font-heading font-bold leading-none tracking-tight"
+          >
             Let's build.
-          </h2>
-          <p className="font-body text-xl md:text-2xl text-secondary-dark max-w-2xl leading-relaxed">
+          </motion.h2>
+          <motion.p
+            variants={fadeInLeft}
+            className="font-body text-xl md:text-2xl text-secondary-dark max-w-2xl leading-relaxed"
+          >
             Based in Mandaluyong City, Philippines. Focused on building and
             modernizing scalable web applications using React and Next.js.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <div className="flex flex-col min-sm:flex-row md:items-end justify-between border-t border-secondary-dark/30 pt-8 mb-12 gap-12">
-          <div className="flex flex-col gap-2">
+          <motion.div
+            className="flex flex-col gap-2"
+            variants={fadeInLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
             <span className="text-sm font-body uppercase tracking-widest text-secondary-dark">
               Direct
             </span>
@@ -28,9 +53,15 @@ const Contact = () => {
             >
               supancj18@gmail.com
             </a>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col gap-2 md:items-end md:mr-14">
+          <motion.div
+            className="flex flex-col gap-2 md:items-end md:mr-14"
+            variants={fadeInRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
             <span className="text-sm font-body uppercase tracking-widest text-secondary-dark">
               Network
             </span>
@@ -44,7 +75,6 @@ const Contact = () => {
               >
                 <Linkedin className="w-6 h-6 text-primary-dark group-hover:text-accent-light transition-colors duration-300" />
               </a>
-
               <a
                 href="https://github.com/cjsupan"
                 target="_blank"
@@ -55,7 +85,7 @@ const Contact = () => {
                 <Github className="w-6 h-6 text-primary-dark group-hover:text-accent-light transition-colors duration-300" />
               </a>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

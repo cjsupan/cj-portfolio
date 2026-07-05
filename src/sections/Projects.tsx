@@ -1,9 +1,17 @@
+import { motion } from "motion/react";
 import { projects } from "../constants/projects";
 import { ProjectCard } from "../components/ProjectCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useRef } from "react";
+import {
+  fadeInLeft,
+  fadeInRight,
+  fadeInUp,
+  stagger,
+  viewport,
+} from "../utils/animations";
 
 const Projects = () => {
   const swiperRef = useRef<any>(null);
@@ -14,16 +22,34 @@ const Projects = () => {
       className="w-full min-h-dvh flex flex-col justify-center py-12 md:py-20 bg-background-dark text-primary-dark dark:bg-background-dark-alt relative overflow-hidden transition-colors duration-500"
     >
       <div className="max-w-7xl mx-auto w-full px-8 sm:px-8 mb-12 flex flex-col md:flex-row md:items-end sm:justify-between items-center gap-8">
-        <div className="flex flex-col gap-4 max-md:w-full">
-          <h2 className="text-6xl sm:text-8xl font-heading font-bold leading-none tracking-tight">
+        <motion.div
+          className="flex flex-col gap-4 max-md:w-full"
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+        >
+          <motion.h2
+            variants={fadeInLeft}
+            className="text-6xl sm:text-8xl font-heading font-bold leading-none tracking-tight"
+          >
             Shipped.
-          </h2>
-          <p className="text-xl md:text-2xl text-secondary-dark">
+          </motion.h2>
+          <motion.p
+            variants={fadeInLeft}
+            className="text-xl md:text-2xl text-secondary-dark"
+          >
             Architectures, integrations, and production platforms.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="max-md:w-full flex flex-row md:gap-4 gap-8 justify-between z-20">
+        <motion.div
+          className="max-md:w-full flex flex-row md:gap-4 gap-8 justify-between z-20"
+          variants={fadeInRight}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+        >
           <button
             className="p-4 text-primary-dark hover:text-accent-light hover:cursor-pointer transition-colors duration-200"
             onClick={() => swiperRef.current?.slidePrev()}
@@ -38,10 +64,16 @@ const Projects = () => {
           >
             <ArrowRight className="w-6 h-6" strokeWidth={1.5} />
           </button>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="w-full pl-8 md:pl-16">
+      <motion.div
+        className="w-full pl-8 md:pl-16"
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewport}
+      >
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           direction={"horizontal"}
@@ -63,7 +95,7 @@ const Projects = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </motion.div>
     </section>
   );
 };

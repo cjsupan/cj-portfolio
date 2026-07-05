@@ -1,5 +1,12 @@
+import { motion } from "motion/react";
 import { technologies } from "../constants/technologies";
 import type { Technology } from "../types/technology";
+import {
+  fadeInLeft,
+  fadeInRight,
+  stagger,
+  viewport,
+} from "../utils/animations";
 
 type Category = Technology["category"];
 
@@ -25,21 +32,35 @@ const Technologies = () => {
       className="w-full min-h-dvh snap-start flex flex-col justify-center px-8 md:px-16 py-12 md:py-20 bg-background-light text-primary-light dark:bg-background-dark dark:text-primary-dark transition-colors duration-500"
     >
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-24">
-        <div className="lg:col-span-5 flex flex-col justify-start">
+        <motion.div
+          className="lg:col-span-5 flex flex-col justify-start"
+          variants={fadeInLeft}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+        >
           <h2 className="text-6xl sm:text-8xl font-heading font-bold leading-[0.9] tracking-tight mb-8 dark:text-primary-dark">
             The
             <br />
             Arsenal.
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="lg:col-span-7 flex flex-col gap-8 md:gap-12">
+        <motion.div
+          className="lg:col-span-7 flex flex-col gap-8 md:gap-12"
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+        >
           {LAYERS.filter(({ key }) => grouped[key]?.length).map(
             ({ key, title }) => (
-              <TechLayer key={key} title={title} items={grouped[key]!} />
+              <motion.div key={key} variants={fadeInRight}>
+                <TechLayer title={title} items={grouped[key]!} />
+              </motion.div>
             ),
           )}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

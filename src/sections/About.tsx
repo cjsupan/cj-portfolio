@@ -1,4 +1,11 @@
+import { motion } from "motion/react";
 import { workExperience } from "../constants/about";
+import {
+  fadeInLeft,
+  fadeInRight,
+  stagger,
+  viewport,
+} from "../utils/animations";
 
 const About = () => {
   return (
@@ -7,21 +14,40 @@ const About = () => {
       className="w-full min-h-dvh flex flex-col justify-center px-8 md:px-16 py-20 bg-background-dark text-primary-dark dark:bg-background-dark-alt transition-colors duration-500"
     >
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
-        <div className="lg:col-span-5 flex flex-col justify-start">
-          <h2 className="text-6xl md:text-8xl font-heading font-bold leading-none tracking-tight mb-8">
+        <motion.div
+          className="lg:col-span-5 flex flex-col justify-start"
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+        >
+          <motion.h2
+            variants={fadeInLeft}
+            className="text-6xl md:text-8xl font-heading font-bold leading-none tracking-tight mb-8"
+          >
             System
             <br />
             Specs.
-          </h2>
-          <p className="text-xl md:text-2xl text-secondary-dark leading-relaxed">
+          </motion.h2>
+          <motion.p
+            variants={fadeInLeft}
+            className="text-xl md:text-2xl text-secondary-dark leading-relaxed"
+          >
             I don't just build interfaces; I engineer systems. Over the last
             four years, I've designed multi-tenant architectures, integrated
             biometric KYC flows, and tuned frontend performance until it snaps.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="lg:col-span-7 flex flex-col gap-16 lg:mt-4">
-          <div>
+        <motion.div
+          className="lg:col-span-7 flex flex-col gap-16 lg:mt-4"
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+        >
+          {/* Work Experience */}
+          <motion.div variants={fadeInRight}>
             <h3 className="text-sm font-medium uppercase tracking-widest text-secondary-dark mb-8 border-b border-secondary-dark/30 pb-4">
               Work Experience
             </h3>
@@ -50,9 +76,10 @@ const About = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          <div>
+          {/* Education */}
+          <motion.div variants={fadeInRight}>
             <h3 className="text-sm uppercase tracking-widest text-secondary-dark mb-8 border-b border-secondary-dark/30 pb-4">
               Education
             </h3>
@@ -72,8 +99,8 @@ const About = () => {
                 <span className="text-sm text-accent-light">2015 — 2022</span>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
