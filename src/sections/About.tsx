@@ -54,7 +54,7 @@ const About = () => {
           viewport={viewport}
         >
           <motion.div variants={fadeInRight}>
-            <h3 className="text-sm md:text-sm font-medium uppercase tracking-widest border-b border-secondary-dark/30 text-primary-light dark:text-secondary-dark lg:mx-2 mb-2 pb-2">
+            <h3 className="text-sm md:text-sm font-medium uppercase tracking-widest border-b border-secondary-dark/30 text-secondary-dark lg:mx-2 mb-2 pb-2">
               Work Experience
             </h3>
 
@@ -104,7 +104,7 @@ const About = () => {
           </motion.div>
 
           <motion.div variants={fadeInRight}>
-            <h3 className="text-sm md:text-sm font-medium uppercase tracking-widest border-b border-secondary-dark/30 text-primary-light dark:text-secondary-dark pb-2 mb-4">
+            <h3 className="text-sm md:text-sm font-medium uppercase tracking-widest border-b border-secondary-dark/30 text-secondary-dark pb-2 mb-4">
               Education
             </h3>
 
