@@ -56,8 +56,8 @@ const Home = () => {
         </p>
         <br />
         <a
-          href="/Cedrick John Supan - Resume.pdf"
-          download="Cedrick John Supan - Resume.pdf"
+          href="/Cedrick_John_Supan_Resume.pdf"
+          download="Cedrick_John_Supan_Resume.pdf"
           className="text-primary-default dark:text-primary-dark font-heading 
              transition-all duration-300 flex items-center gap-2 underline"
         >

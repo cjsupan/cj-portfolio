@@ -19,7 +19,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="w-full min-h-dvh flex flex-col justify-center py-12 md:py-20 bg-background-dark text-primary-dark dark:bg-background-dark-alt relative overflow-hidden transition-colors duration-500"
+      className="w-full min-h-dvh flex flex-col justify-center py-12 md:py-20 bg-background-dark text-primary-dark dark:bg-background-dark-alt relative overflow-hidden lg:transition-colors lg:duration-500"
     >
       <div className="max-w-7xl mx-auto w-full px-8 sm:px-8 mb-12 flex flex-col md:flex-row md:items-end sm:justify-between items-center gap-8">
         <motion.div
@@ -51,14 +51,14 @@ const Projects = () => {
           viewport={viewport}
         >
           <button
-            className="p-4 text-primary-dark hover:text-accent-light hover:cursor-pointer transition-colors duration-200"
+            className="p-4 text-primary-dark hover:text-accent-light hover:cursor-pointer lg:transition-colors lg:duration-200"
             onClick={() => swiperRef.current?.slidePrev()}
             aria-label="Previous Project"
           >
             <ArrowLeft className="w-6 h-6" strokeWidth={1.5} />
           </button>
           <button
-            className="p-4 text-primary-dark hover:text-accent-light hover:cursor-pointer transition-colors duration-200"
+            className="p-4 text-primary-dark hover:text-accent-light hover:cursor-pointer lg:transition-colors lg:duration-200"
             onClick={() => swiperRef.current?.slideNext()}
             aria-label="Next Project"
           >

@@ -29,4 +29,5 @@ export const technologies: Technology[] = [
   { name: "Figma", category: "tooling" },
   { name: "Postman", category: "tooling" },
   { name: "Jest", category: "tooling" },
+  { name: "JIRA", category: "tooling" },
 ];

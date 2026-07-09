@@ -31,7 +31,7 @@ export const projects: Projects[] = [
     id: "ai-document-workflow-automation",
   },
   {
-    title: "Lender Marketplace Dashboard",
+    title: "AI-assisted Lender Dashboard",
     description:
       "A lender-facing dashboard that allows financial institutions to view, filter, and manage matched SME financing opportunities, including deal evaluation, application tracking, and pipeline management.",
     link: "https://dashboard.kredithero.com/login",

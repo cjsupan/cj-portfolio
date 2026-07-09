@@ -12,7 +12,7 @@ const Recommendations = () => {
   return (
     <section
       id="recommendations"
-      className="w-full min-h-dvh snap-start flex flex-col justify-center px-8 md:px-16 py-12 md:py-20 bg-background-light text-primary-light dark:bg-background-dark transition-colors duration-500"
+      className="w-full min-h-dvh snap-start flex flex-col justify-center px-8 md:px-16 py-12 md:py-20 bg-background-light text-primary-light dark:bg-background-dark dark:text-primary-dark lg:transition-colors lg:duration-500"
     >
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
         <motion.div
@@ -24,7 +24,7 @@ const Recommendations = () => {
         >
           <motion.h2
             variants={fadeInLeft}
-            className="text-6xl md:text-8xl font-heading font-bold leading-[0.9] tracking-tight mb-8 dark:text-primary-dark"
+            className="text-6xl sm:text-8xl font-heading font-bold leading-[0.9] tracking-tight mb-8 lg:mb-2 dark:text-primary-dark"
           >
             The
             <br />
@@ -43,7 +43,7 @@ const Recommendations = () => {
               href="https://www.linkedin.com/in/cedrick-john-supan/details/recommendations/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-lg md:text-xl font-heading font-semibold text-primary-light dark:text-primary-dark hover:text-accent-dark dark:hover:text-accent-light underline underline-offset-8 transition-colors duration-300 group"
+              className="inline-flex items-center gap-2 text-lg md:text-xl font-heading font-semibold text-primary-light dark:text-primary-dark hover:text-accent-dark dark:hover:text-accent-light underline underline-offset-8 lg:transition-colors lg:duration-300 group"
             >
               <span>Verify on LinkedIn</span>
               <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
@@ -95,8 +95,8 @@ const Recommendations = () => {
                 </div>
               </div>
 
-              <blockquote className="text-lg sm:text-xl font-body leading-relaxed text-primary-light/90 dark:text-primary-dark">
-                "{rec.content}"
+              <blockquote className="relative text-lg sm:text-xl font-body leading-relaxed text-primary-light/90 dark:text-primary-dark before:absolute before:right-full before:mr-1 before:content-['“'] after:content-['”']">
+                {rec.content}
               </blockquote>
             </motion.div>
           ))}

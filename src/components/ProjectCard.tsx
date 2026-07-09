@@ -50,7 +50,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         </p>
       </div>
 
-      <div className="flex flex-col gap-4 border-t border-secondary-light/20 dark:border-secondary-dark/30 pt-6 group-hover:border-accent-dark/40 dark:group-hover:border-accent-light/40 transition-colors duration-300">
+      <div className="flex flex-col gap-4 border-t border-secondary-light/20 dark:border-secondary-dark/30 pt-6 group-hover:border-accent-dark/40 dark:group-hover:border-accent-light/40 lg:transition-colors lg:duration-300">
         <div className="flex items-center justify-between">
           <span className="text-xs font-body uppercase tracking-widest opacity-60">
             {isNDA ? "Status" : "Stack"}
@@ -66,7 +66,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           {project.tech.map((t) => (
             <span
               key={t}
-              className={`px-2 py-1 text-[10px] uppercase tracking-wider border rounded-sm transition-colors duration-500 
+              className={`px-2 py-1 text-[10px] uppercase tracking-wider border rounded-sm lg:transition-colors lg:duration-500 
                          ${
                            isNDA
                              ? "border-secondary-light/10 text-secondary-light/50"
